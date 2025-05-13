@@ -44,6 +44,12 @@ interface FunctionCallResultMessage extends BaseMessage {
   };
 }
 
+interface AssistantOverrides {
+  variableValues: Record<string, any>;
+  clientMessages: Array<{ role: "user" | "system" | "assistant"; content: string }>;
+  serverMessages: Array<{ role: "user" | "system" | "assistant"; content: string }>;
+}
+
 type Message =
   | TranscriptMessage
   | FunctionCallMessage
