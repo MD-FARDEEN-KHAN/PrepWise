@@ -3,18 +3,19 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import InterviewCard from "@/components/InterviewCard";
 import { getLatestInterviews } from "@/lib/actions/general.action";
-import { dummyInterviews, type interviewer } from "@/constants";
+import { dummyInterviews } from "@/constants";
 
 async function Home() {
-  const allInterviews = await getLatestInterviews();
-
-  console.log("Fetched interviews:", allInterviews?.length);
-
-  // fallback to dummyInterviews if none from DB
-  const interviewsToShow =
-    Array.isArray(allInterviews) && allInterviews.length > 0
-      ? allInterviews
-      : dummyInterviews;
+  let interviewsToShow = dummyInterviews;
+  try {
+    const allInterviews = await getLatestInterviews();
+    if (Array.isArray(allInterviews) && allInterviews.length > 0) {
+      interviewsToShow = allInterviews;
+    }
+  } catch (error) {
+    // If authentication fails or any error occurs, fallback to dummyInterviews
+    interviewsToShow = dummyInterviews;
+  }
 
   return (
     <>

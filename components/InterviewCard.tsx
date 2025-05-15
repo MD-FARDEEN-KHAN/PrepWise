@@ -96,6 +96,18 @@ const InterviewCard = async ({
               href={
                 feedback
                   ? `/interview/${interviewId}/feedback`
+                  : interviewId === "1"
+                    ? `/frontend`
+                  : interviewId === "2"
+                    ? `/fullstack`
+                  : interviewId === "3"
+                    ? `/backend`
+                  : interviewId === "4"
+                    ? `/devops`
+                  : interviewId === "5"
+                    ? `/mad`
+                  : interviewId === "6"
+                    ? `/amazon`
                   : `/interview/${interviewId}`
               }
             >
