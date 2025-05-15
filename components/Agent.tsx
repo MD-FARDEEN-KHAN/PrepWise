@@ -127,6 +127,15 @@ const Agent = ({
           clientMessages: [], // Add appropriate client messages here
           serverMessages: [], // Add appropriate server messages here
         });
+      } else if (type === "amazon") {
+        await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID_1!, {
+          variableValues: {
+            username: userName,
+            userid: userId,
+          },
+          clientMessages: [], // Add appropriate client messages here
+          serverMessages: [], // Add appropriate server messages here
+        });
       } else {
         let formattedQuestions = "";
         if (questions) {

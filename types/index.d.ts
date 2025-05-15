@@ -52,10 +52,9 @@ interface AgentProps {
   userId?: string;
   interviewId?: string;
   feedbackId?: string;
-  type: "generate" | "interview";
+  type: "generate" | "interview" | "amazon";
   questions?: string[];
   profileImage?: any;
-  
 }
 
 interface RouteParams {
@@ -69,7 +68,7 @@ interface GetFeedbackByInterviewIdParams {
 }
 
 interface GetLatestInterviewsParams {
-  userId: string;
+  userId?: string;
   limit?: number;
 }
 
