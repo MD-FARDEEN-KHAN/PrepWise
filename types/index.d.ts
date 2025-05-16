@@ -55,6 +55,7 @@ interface AgentProps {
   type: "generate" | "interview" | "amazon";
   questions?: string[];
   profileImage?: any;
+  workflowId?: string;
 }
 
 interface RouteParams {

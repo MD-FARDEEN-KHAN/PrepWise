@@ -90,7 +90,6 @@ const InterviewCard = async ({
 
         <div className="flex flex-row justify-between">
           <DisplayTechIcons techStack={techstack} />
-
           <Button className="btn-primary">
             <Link
               href={
@@ -98,17 +97,17 @@ const InterviewCard = async ({
                   ? `/interview/${interviewId}/feedback`
                   : interviewId === "1"
                     ? `/frontend`
-                  : interviewId === "2"
-                    ? `/fullstack`
-                  : interviewId === "3"
-                    ? `/backend`
-                  : interviewId === "4"
-                    ? `/devops`
-                  : interviewId === "5"
-                    ? `/mad`
-                  : interviewId === "6"
-                    ? `/amazon`
-                  : `/interview/${interviewId}`
+                    : interviewId === "2"
+                      ? `/fullstack`
+                      : interviewId === "3"
+                        ? `/backend`
+                        : interviewId === "4"
+                          ? `/devops`
+                          : interviewId === "5"
+                            ? `/mad`
+                            : interviewId === "6"
+                              ? `/amazon`
+                              : `/interview/${interviewId}`
               }
             >
               {feedback ? "Check Feedback" : "View Interview"}
